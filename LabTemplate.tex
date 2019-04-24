@@ -1,14 +1,40 @@
-\documentclass[12pt]{article}
-\usepackage{nopageno}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage[margin=0.5in]{geometry}
-\usepackage{graphicx}
-\usepackage{outlines}
-\usepackage{hyperref}
-\graphicspath{{./Images/}}
-%When writing indented paragraphs:
-%\usepackage{indentfirst}
+\documentclass[12pt,a4paper]{article}
+\usepackage{nopageno} % supress page number
+\usepackage{amsmath} % displayed equations
+\usepackage{amssymb} % math symbols
+\usepackage[margin=0.5in]{geometry} % custom margins
+\usepackage{graphicx} % figures
+\usepackage{hyperref} % links in references
+\usepackage{listings} % code blocks
+\usepackage{color} % colored code blocks
+\usepackage{caption} % custom captions
+\usepackage{float} % place figures as float
+\graphicspath{{./Images/}} % set path to images
+
+% When writing indented paragraphs:
+% \usepackage{indentfirst}
+
+% Coloring of code blocks:
+% Source: stackoverflow.com/a/3175141
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
 
 \begin{document}
 	\begin{center}
@@ -32,95 +58,57 @@
 	\newpage
 	
 	\section*{Introduction:}
-		\begin{outline}[enumerate]
-			\1 State motivation – why you did this work?
-			\1 Describe physics phenomena and methods of study.
-			\1 Cover all investigations, keep short.
-		\end{outline}
 		Equations:
 		\[ \vec{\nabla} \cdot \vec{E} = \frac{\rho}{\varepsilon_0} \tag{1} \]
 		\[ \vec{\nabla} \cdot \vec{B} = 0 \tag{2} \]
 		\[ \vec{\nabla} \times \vec{E} = - \frac{\partial \vec{B}}{\partial t} \tag{3} \]
 		\[ \vec{\nabla} \times \vec{B} = \mu_0 \left( \vec{J} + \varepsilon_0 \frac{\partial \vec{E}}{\partial t} \right) \tag{4} \]
 	
-	\section*{Investigation n:}
-		\begin{outline}[enumerate]
-			\1 For each investigation: Discuss experimental set-up.
-			\1 Explain experimental procedure.
-			\1 Describe how the data was collected.
-			\1 Include all data using graphs/tables, with titles.
-				\2 If needed, include truncated raw data into Appendix.
-				
-		\begin{center}
-			\begin{tabular}{c|ccc|c}
-        			&            
-        			& $\div q$    
-         		&              
-         		&        \\ \hline
-         		& $ F = \kappa \frac{q_1 q_2}{r^2}$    
-         		& $\rightarrow$ 
-         		& $E = \kappa \frac{q}{r^2}$       
-         		&        \\ $ \frac{d}{dx} $ 
-         		& $\uparrow$ 
-         		&               
-         		& $\downarrow$ 
-         		& $ \int dx$ \\
-         		& $ U = \kappa \frac{q_1 q_2}{r}$    
-         		& $\leftarrow$  
-         		& $ V = \kappa \frac{q}{r}$      
-         		&        \\ \hline
-         		&            
-         		& $ \times q $         
-         		&              
-         		&       
-			\end{tabular}\\
-			\begin{small} \textbf{
-				Table n - Random Table (1)
-			} \end{small}
-		\end{center}
-		
-		\begin{center}
+	\section*{Investigation n:}	
+		\begin{figure}[H]
+			\centering
+			\begin{tabular}{ccccc}
+				\(\displaystyle \vec{F}_E = \frac{1}{4 \pi \varepsilon_0} \frac{qQ}{r^2} \hat{r} \) &
+				$\rightarrow$ & 
+				$\displaystyle \vec{E} = \frac{1}{q} \vec{F}$ & 
+				$\rightarrow$ &
+				\(\displaystyle \vec{E} = \frac{1}{4 \pi \varepsilon_0} \frac{Q}{r^2} \hat{r} \)\\
+				$\uparrow$ & & & & $\downarrow$\\
+				\(\displaystyle \vec{F}_E = - \vec{\nabla} \Delta U\) & & & &
+				\(\displaystyle \Delta V = - \int_C \vec{E} \cdot d\vec{l}\)\\
+				$\uparrow$ & & & & $\downarrow$\\
+				\(\displaystyle \Delta U = \frac{1}{4 \pi \varepsilon_0} \frac{Qq}{r} \) &
+				$\leftarrow$ & 
+				$\Delta U = q \Delta V$ & 
+				$\leftarrow$ &
+				\(\displaystyle \Delta V = \frac{1}{4 \pi \varepsilon_0} \frac{Q}{r} \)
+			\end{tabular}
+			\caption{Random Table}
+		\end{figure}
+		\begin{figure}[H]
 			% Plot Image in ./Image/ folder
 			% Source: made with InkScape
+			\centering
 			\includegraphics[width=4in]{RandFigure}\\
-			\begin{small} \textbf{
-				Figure n - Random Sample Figure
-			} \end{small}
-		\end{center}
-				\2 Reference Table as [Table n], reference Figure as [Figure n]
-			\1 Summarize physics concepts under investigation.
-				\2 Cite equations as [1], [2], [3], [4] corresponding to tags in introduction.
-			\1 Discuss relation between data and theory.
-		 	\1 Describe techniques used to analyze data.
-		 		\2 Cite references as (1), (2), (3), (4), corresponding to number in References.
-		 	\1 Discuss sources/values of uncertainties in your measurement.
-			\1 Write down main results with uncertainties.
-			\1 Compare measured quantities to expected values.
-			\1 Discuss if they match or not your expectations.
-			\1 List the unaccounted factors in your analysis.
-			\1 Argue why and how external factors may affect the results.\\
-		\end{outline}
+			\caption{Random Figure}
+		\end{figure}
+		\begin{figure}[H]
+			\lstinputlisting[breaklines]{fibonacci.py}
+			\centering
+			\caption{Random Code}
+		\end{figure}
+		
 		
 	\section*{Conclusion:}
-		\begin{outline}[enumerate]
-			\1 List physical concepts that have been investigated.
-			\1 Summarize all main results that you obtained.
-		 	\1 Discuss how external factors might have skewed the results.
-			\1 Discuss possible improvements.
-			\1 Keep to half a page.
-		\end{outline}
 		
 	\section*{Questions:}
-		\begin{outline}[enumerate]
-			\1 Answer all questions at the end of experiment in the IPL Manual.
-			\1 Type all necessary algebra, not just the answer.
-			\1 Honors sections must answer extra question.
-		\end{outline}
+		\begin{enumerate}
+			\item Question 1
+		\end{enumerate}
 		
 	\section*{References:}
-		\begin{outline}[enumerate]
-			\1 \href{https://www.tablesgenerator.com/#}{Table Generator \LaTeX}
-			\1 \href{https://web.northeastern.edu/ipl/data-analysis/straight-line-fit/}{Northeastern IPL Straight Line Fit Calculator}
-		\end{outline}
-		
+		\begin{enumerate}
+			\item \href{https://www.tablesgenerator.com/#}{Table Generator \LaTeX}, helpful if converting Excel Data
+			\item \href{https://web.northeastern.edu/ipl/data-analysis/straight-line-fit/}{Northeastern IPL Straight Line Fit Calculator}
+		\end{enumerate}
 \end{document}
