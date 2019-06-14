@@ -1,5 +1,4 @@
 \documentclass[12pt,a4paper]{article}
-\usepackage{nopageno} % supress page number
 \usepackage{amsmath} % displayed equations
 \usepackage{amssymb} % math symbols
 \usepackage[margin=0.5in]{geometry} % custom margins
@@ -9,11 +8,15 @@
 \usepackage{color} % colored code blocks
 \usepackage{caption} % custom captions
 \usepackage{float} % place figures as float
+\usepackage{circuitikz} % circuits, also loads tikz
 
 \graphicspath{{./Images/}} % set path to images
 
 % When writing indented paragraphs:
 % \usepackage{indentfirst}
+
+% To supress page numbers:
+% \usepackage{nopageno}
 
 % Coloring of code blocks:
 % Source: stackoverflow.com/a/3175141
@@ -21,7 +24,7 @@
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 \lstset{frame=tb,
-  language=Java,
+  language=Python,
   aboveskip=3mm,
   belowskip=3mm,
   showstringspaces=false,
@@ -92,10 +95,9 @@
 			\end{tabular}
 			\caption{Random Table}
 		\end{figure} \noindent
-		Sample figure,
+		Sample figure (InkScape),
 		\begin{figure}[H]
 			% Image in ./Image/ folder
-			% Source: made with InkScape
 			\centering
 			\includegraphics[width=4in]{RandFigure}\\
 			\caption{Random Figure}
@@ -105,11 +107,31 @@
 			\lstinputlisting[breaklines]{./Code/RandCode.py}
 			\centering
 			\caption{Random Code}
-		\end{figure}
-		
+		\end{figure} \noindent
+		Sample circuit with Circuitikz,
+		\begin{figure}[H]
+			\centering
+			\begin{circuitikz}
+		    	\draw (0,0)
+		      	to[V,v=$V(t)$] (0,2) % The voltage source
+  		      	to[short] (2,2)
+		      	to[R=$R_1$] (2,0) % The resistor
+		      	to[short] (0,0);
+		      	\draw (2,2)
+		      	to[short] (4,2)
+		      	to[L=$L_1$] (4,0)
+		      	to[short] (2,0);
+		      	\draw (4,2)
+		      	to[short] (6,2)
+		      	to[C=$C_1$] (6,0)
+		      	to[short] (4,0);
+   			\end{circuitikz}
+   			\caption{Random Circuit}
+		\end{figure}				
 		
 	\section*{Conclusion:}
-		
+		I'm never really sure what goes here.
+
 	\section*{Questions:}
 		\begin{enumerate}
 			\item Question 1

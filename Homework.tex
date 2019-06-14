@@ -1,0 +1,174 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{circuitikz}
+\usepackage{mdframed}
+\usepackage{titlesec}
+\usepackage{chemfig}
+\usepackage{minted}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+
+
+
+% -------- %
+% SECTIONS %
+% -------- %
+\newcounter{problemnumber}\setcounter{problemnumber}{1}
+\titlespacing\section{0pt}{10pt}{0pt}   % Spacing between Problems
+\titlespacing\subsection{0pt}{5pt}{0pt} % Spacing between Parts
+\newcommand{\problem}[1][-1]{
+	\setcounter{partnumber}{1}
+	\ifnum#1>0
+		\setcounter{problemnumber}{#1}
+	\fi
+	\section*{Problem \arabic{problemnumber}}
+	\stepcounter{problemnumber}
+}
+
+\newcounter{partnumber}\setcounter{partnumber}{1}
+\newcommand{\ppart}[1][-1]{
+	\ifnum#1>0
+		\setcounter{partnumber}{#1}
+	\fi
+	\subsection*{Part \parttype{partnumber}}
+	\stepcounter{partnumber}
+}
+
+\newenvironment{question}{
+	\color{gray}\itshape
+	
+	\vspace{5pt}
+	\begin{tabular}{|p{0.97\linewidth}}
+}{
+	\end{tabular}\\[5pt]
+}
+
+
+
+% ------------- %
+% HEADER/FOOTER %
+% ------------- %
+\setlength{\parindent}{0pt}
+\setlength{\headheight}{30pt}
+\headsep=0.25in
+\pagestyle{fancy}
+\lhead{\ifthenelse{\thepage=1}
+	{\textbf{Jack Leightcap} \\ \textbf{\writeday}}
+	{} % Blank left header past first page
+}
+\chead{\ifthenelse{\thepage=1}
+	{\textbf{\huge{HOMEWORK \hwnumber}}}
+	{\textbf{\large{HOMEWORK \hwnumber}}}
+}
+\rhead{\ifthenelse{\thepage=1}
+	{\textbf{{\course}} \\ \textbf{Professor {\prof}}}
+	{} % Blank right header past first page
+}
+\cfoot{\thepage}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+% ---------- %
+% PARAMETERS %
+% ---------- %
+% \PARTTYPE:
+% \Alph   := "Part A, Part B,  ..."
+% \alph   := "Part a, Part b,  ..."
+% \arabic := "Part 1, Part 2,  ..."
+% \Roman  := "Part I, Part II, ..."
+\newcommand\parttype{\Roman}
+
+% \COURSE:
+\newcommand\course{EECE 1234}
+
+% \HWNUMBER
+\newcommand\hwnumber{1}
+
+% \SEMESTER
+\newcommand\semester{Fall 2019}
+
+% \PROF
+\newcommand\prof{Schmitty}
+
+% \WRITEDAY
+% \today is date of compilation, replace if writing due date rather than write date
+\newcommand\writeday{\today}
+
+
+
+%  ------- %
+% DOCUMENT %
+% -------- %
+\begin{document}
+\problem
+Problem quotes use \emph{quesiton} environment.
+\begin{question}	
+	Problem statements in italics using the \emph{question} environment.
+	Since wrapped in a \emph{tabular} environment, inline math like \(a^2 + b^2 = c^2\) is allowed. 
+\end{question}
+Example \texttt{chemfig},
+\begin{figure}[H]
+	\centering
+	\chemfig{C(-[5]H)(-[2]H)(<[:-70]H)(<:[:-20]H)}
+	\hspace{2cm}
+	\chemfig{H_3C-CH(-[2]CH_3)-CH_3}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\chemnameinit{\chemfig{R-C(-[:-30]OH)=[:30]O}}
+	\schemestart
+		\chemname{\chemfig{R'OH}}{Alcohol}
+		\+
+		\chemname{\chemfig{R-C(-[:-30]OH)=[:30]O}}{Carboxylic acid}
+		\arrow(.mid east--.mid west)
+		\chemname{\chemfig{R-C(-[:-30]OR')=[:30]O}}{Ester}
+		\+
+		\chemname{\chemfig{H_2O}}{Water}
+	\schemestop
+	\chemnameinit{}
+\end{figure}
+\problem
+Syntax highlighting code blocks is simple if using \texttt{minted}, however requires eternal python compilation. This makes very pretty code blocks that are ulikely to compile without fidling.
+\ppart
+\begin{minted}{python}
+def fib(n):
+    if n <= 1:
+        return n
+    else:
+        return fib(n-1) + fib(n-2)
+\end{minted}
+\ppart
+\begin{minted}{racket}
+(define (fib n)
+    (cond [(<= n 1) n]
+          [else (+ (fib (- n 1)) (fib (- n 2)))]))
+\end{minted}
+\problem
+Some \texttt{circuitikz},
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+        	\draw (0,0)
+		to[V,v= $V_\text{ext}(t)$ ] (0,2)
+                to[short] (2,2)
+                to[R= $R_1$ ] (2,0)
+                to[short] (0,0);
+                \draw (2,2)
+                to[short] (4,2)
+                to[L= $L_1$ ] (4,0)
+                to[short] (2,0);
+                \draw (4,2)
+                to[short] (6,2)
+                to[C= $C_1$ ] (6,0)
+                to[short] (4,0);
+        \end{circuitikz}
+\end{figure}
+Always make your answers clear!
+\[\boxed{\frac{1}{L_1} \int_0^t V(\tau)d\tau + \frac{V(t)}{R_1} + C_1\frac{dV(t)}{dt} = V_\text{ext}(t)}\]
+\newpage
+Hey, another page! Look at the different header!
+\end{document}i
