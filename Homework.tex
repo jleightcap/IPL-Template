@@ -11,6 +11,7 @@
 \usepackage{graphicx}
 \usepackage{ifthen}
 \usepackage{fancyhdr}
+\usepackage{musixtex}
 
 
 
@@ -58,7 +59,6 @@
 \pagestyle{fancy}
 \lhead{\ifthenelse{\thepage=1}
 	{\textbf{Jack Leightcap} \\ \textbf{\writeday}}
-	{} % Blank left header past first page
 }
 \chead{\ifthenelse{\thepage=1}
 	{\textbf{\huge{HOMEWORK \hwnumber}}}
@@ -66,11 +66,12 @@
 }
 \rhead{\ifthenelse{\thepage=1}
 	{\textbf{{\course}} \\ \textbf{Professor {\prof}}}
-	{} % Blank right header past first page
 }
 \cfoot{\thepage}
 \renewcommand\headrulewidth{0.4pt}
 \renewcommand\footrulewidth{0.4pt}
+
+
 
 % ---------- %
 % PARAMETERS %
@@ -132,7 +133,8 @@ Example \texttt{chemfig},
 	\chemnameinit{}
 \end{figure}
 \problem
-Syntax highlighting code blocks is simple if using \texttt{minted}, however requires eternal python compilation. This makes very pretty code blocks that are ulikely to compile without fidling.
+Syntax highlighting code blocks is simple if using \texttt{minted}, however requires eternal python compilation.
+This makes very pretty code blocks that are ulikely to compile on another setup without fidling.
 \ppart
 \begin{minted}{python}
 def fib(n):
@@ -148,7 +150,7 @@ def fib(n):
           [else (+ (fib (- n 1)) (fib (- n 2)))]))
 \end{minted}
 \problem
-Some \texttt{circuitikz},
+Circuit diagrams with \texttt{circuitikz},
 \begin{figure}[H]
 	\centering
 	\begin{circuitikz}
@@ -167,8 +169,30 @@ Some \texttt{circuitikz},
                 to[short] (4,0);
         \end{circuitikz}
 \end{figure}
-Always make your answers clear!
-\[\boxed{\frac{1}{L_1} \int_0^t V(\tau)d\tau + \frac{V(t)}{R_1} + C_1\frac{dV(t)}{dt} = V_\text{ext}(t)}\]
-\newpage
-Hey, another page! Look at the different header!
-\end{document}i
+\problem
+Always box final answers with \texttt{{\textbackslash}boxed\{\}},
+\[ \boxed{\int \nabla \cdot \textbf{A} d\tau = \oint \textbf{A} \cdot d\textbf{a}}\]
+\problem
+Header changes past first page.
+\problem
+Music notation using \texttt{musixtex}.
+In practice, I'd probably use \texttt{lilypond} and import as an image.\\
+\begin{music}
+	\parindent10mm
+	\instrumentnumber{1}
+	\setname1{Piano}
+	\setstaffs1{2}
+	\generalmeter{\meterfrac44}
+	\startextract
+		\Notes\ibu0f0\qb0{cge}\tbu0\qb0g|\hl j\en
+		\Notes\ibu0f0\qb0{cge}\tbu0\qb0g|\ql l\sk\ql n\en\bar
+		\Notes\ibu0f0\qb0{dgf}|\qlp i\en
+		\Notes\tbu0\qb0g|\ibbl1j3\qb1j\tbl1\qb1k\en
+		\Notes\ibu0f0\qb0{cge}\tbu0\qb0g|\hl j\en
+  	\zendextract
+\end{music}
+However, \texttt{musixtex} allows direct integration in a \texttt{*.tex} file, compared to something like \texttt{*.lytex}.
+\problem[10]
+Problem number skips with \texttt{{\textbackslash}problem[\#]}. \texttt{{\textbackslash}problem} without an argument defaults to counting up (as most assignments have strictly increasing question numbers), so next problem is...
+\problem
+\end{document}

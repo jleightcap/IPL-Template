@@ -4,3 +4,8 @@
 *.out
 *.aux
 *.synctex.gz
+*.fls
+*.fdb_latexmk
+*.mx1
+*.pdf
+**/_minted*
