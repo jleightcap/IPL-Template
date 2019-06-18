@@ -10,8 +10,13 @@ These templates try to include every possilbe case for my own personal use. The 
 * Sheet Music with `musixtex`
 
 ## Notes
-This template is mostly just 'stock' LaTeX.
-* Boxed and formatted important expressions
+* **University logo** 
+free advertisement, I guess
+* **Boxed and formatted expressions using `mdframed`**
+Colored boxes for highlighting derived equations and lecture questions/answers
+* **Automatic lecture numbering, with optional skips**
+`\lecture \lecture \lecture[4] \lecture` → `Lecture #1 Lecture #2 Lecture #4 Lecture #5`
+![Notes](/Examples/Notes.png)
 ## Homework
 * **Page-dependent `fancyhdr` header/footer**
 Header/footer can change depending on page using `ifthenelse`, defaults to a more detailed header on the first page and simpler header on the following pages.
@@ -22,10 +27,9 @@ Setting `\parttype` to `\Roman`,
 ` \ppart \ppart \ppart[5] \ppart` → `Part I Part II Part IV Part VI`
 * ***question* environment**
 Italic gray text indented by a vertical line. Used if it is helpful to restate a question.
-
+![Homework](/Examples/Homework.png)
 ## Labs
 Labs unfortunately mostly change format per professor. This means a 'common ancestor' template is very bare-bones, with the specific requirements added later on a class-by-class basis.
-* University logo
 
 ## Editing Environment
 I use vim with the `vimtex` and `vim-latex-live-preview` plugins, and `zathura` as a PDF viewer. This makes editing `*.tex` files a lost more like a WYSIWYG editor.
