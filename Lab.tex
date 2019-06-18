@@ -8,8 +8,6 @@
 \usepackage{float} % place figures as float
 \usepackage{circuitikz} % circuits, also loads tikz
 
-\graphicspath{{./Images/}} % set path to images
-
 % When writing indented paragraphs:
 % \usepackage{indentfirst}
 
@@ -18,9 +16,7 @@
 
 \begin{document}
 \begin{center}
-	% Header Image in ./Images/ folder
-	% Source: extracted from https://web.northeastern.edu/ipl/wp-content/uploads/2017/09/IPL-Sample-Lab-Report.pdf
-	\includegraphics{Header}
+	\includegraphics[width=\textwidth]{./Images/Header.jpeg}
 	\vfill		
 	\textbf{\Large{Report for Experiment \#N\\
 	Lab Name}}
@@ -70,13 +66,6 @@
 			\(\displaystyle \Delta V = \frac{1}{4 \pi \varepsilon_0} \frac{Q}{r} \)
 		\end{tabular}
 		\caption{Random Table}
-	\end{figure} \noindent
-	Sample figure (InkScape),
-	\begin{figure}[H]
-		% Image in ./Image/ folder
-		\centering
-		\includegraphics[width=4in]{RandFigure}\\
-		\caption{Random Figure}
 	\end{figure} \noindent
 	Sample code,
 	Sample circuit with Circuitikz,

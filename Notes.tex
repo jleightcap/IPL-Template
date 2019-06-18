@@ -23,8 +23,8 @@
 \newenvironment{result}[1][]{
 \ifstrempty{#1}
 	{} % Don't add header
-	{\mdfsetup{%
-    		frametitle={%
+	{\mdfsetup{
+    		frametitle={
         		\tikz[baseline=(current bounding box.east),outer sep=0pt]
         		\node[anchor=east,rectangle,fill=blue!30]
         		{#1};}}
@@ -39,7 +39,43 @@
 	\end{mdframed}
 }
 
+\newenvironment{question}[1][]{
+\ifstrempty{#1}
+	{}
+	{\mdfsetup{
+		frametitle={
+			\tikz[baseline=(current bounding box.east),outer sep=0pt]
+			\node[anchor=east,rectangle,fill=red!30]
+			{#1};}}
+	}
+	\mdfsetup{
+		innertopmargin=10pt,linecolor=red!30,
+		linewidth=2pt,topline=true,
+		frametitleaboveskip=\dimexpr - \ht\strutbox\relax
+	}
+	\begin{mdframed}
+}{
+	\end{mdframed}
+}
 
+\newenvironment{answer}[1][]{
+\ifstrempty{#1}
+	{}
+	{\mdfsetup{
+		frametitle={
+			\tikz[baseline=(current bounding box.east),outer sep=0pt]
+			\node[anchor=east,rectangle,fill=green!30]
+			{#1};}}
+	}
+	\mdfsetup{
+		innertopmargin=10pt,linecolor=green!30,
+		linewidth=2pt,topline=true,
+		frametitleaboveskip=\dimexpr - \ht\strutbox\relax
+	}
+	\begin{mdframed}
+}{
+	\end{mdframed}
+}
 
 % -------- %
 % SECTIONS %
@@ -85,13 +121,26 @@
 
 
 \lecture
-Colored and boxed results using \texttt{mdframed} in \texttt{result} environment,
+Colored and boxed results using \texttt{mdframed} in \texttt{result} environment with \texttt{{\textbackslash}begin\{result\}[Title]},
 \begin{result}[Important Result]
 	From the explanation it should be intuitive that
 	\[ H(X) = -\sum_{i=1}^n p(x_i) \log_bp(x_i) \]
 \end{result}
 
-  
+\lecture
+An important lecture question can be written in the \texttt{question} environment with \texttt{{\textbackslash}begin\{quesiton\}[Title]},
+\begin{question}[Lecture Question]
+	Why?
+\end{question}
+An important lecture answer can be written in the \texttt{answer} environment with \texttt{{\textbackslash}begin\{answer\}[Title]},
+\begin{answer}[Lecture Answer]
+	Because!
+\end{answer}
+All of these \texttt{mdframed} environments don't have to input a title,
+\begin{answer}
+	I can't think of a creative title!
+\end{answer}
+
 \lecture[3]
 \texttt{{\textbackslash}lecture} automatically counts, skip numbers with \texttt{{\textbackslash}lecture[\#]} (but don't skip lectures!)
 
