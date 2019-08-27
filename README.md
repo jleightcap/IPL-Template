@@ -3,7 +3,9 @@ A collection of personal LaTeX templates, used for rewriting notes, writing home
 
 ## Usage
 These templates try to accomodate most common personal use cases. Just copy the appropriate folder, delete any unneeded components, and begin editing the bare-bones `.tex` file. For example, to start a notes file for a new class,
-    cp -r Notes EECE1234
+```
+cp -r Notes EECE1234
+```
 
 ## Package Dependencies
 These templates try to include most common personal use cases. 
@@ -11,7 +13,6 @@ These templates try to include most common personal use cases.
 * Chemical structures with `chemfig`
 * Code blocks with `minted`
 * Circuit diagrams with `circuitikz` (which loads `tikz`)
-
 `Minted` might cause initial compilation issues - see the [documentation](https://github.com/gpoore/minted) for the appropriate setup (`python` and 'pygments`, as well as a `-shell-escape` flag in compilation)
 
 ## Notes
