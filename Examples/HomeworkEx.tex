@@ -1,5 +1,6 @@
 \documentclass{article}
-\usepackage[margin=1in]{geometry}
+
+\usepackage[margin=0.5in]{geometry}
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
 \usepackage{circuitikz}
 \usepackage{mdframed}
@@ -11,9 +12,7 @@
 \usepackage{graphicx}
 \usepackage{ifthen}
 \usepackage{fancyhdr}
-\usepackage{musixtex}
-
-
+\usepackage{xcolor}
 
 % -------- %
 % SECTIONS %
@@ -136,7 +135,8 @@ Example \texttt{chemfig},
 Syntax highlighting code blocks is simple if using \texttt{minted}, however requires eternal python compilation.
 This makes very pretty code blocks that are ulikely to compile on another setup without fidling.
 \ppart
-\begin{minted}{python}
+\begin{minted}[linenos]
+{python}
 def fib(n):
     if n <= 1:
         return n
@@ -144,7 +144,8 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 \end{minted}
 \ppart
-\begin{minted}{racket}
+\begin{minted}[linenos]
+{racket}
 (define (fib n)
     (cond [(<= n 1) n]
           [else (+ (fib (- n 1)) (fib (- n 2)))]))
@@ -172,26 +173,9 @@ Circuit diagrams with \texttt{circuitikz},
 \problem
 Always box final answers with \texttt{{\textbackslash}boxed\{\}},
 \[ \boxed{\int \nabla \cdot \textbf{A} d\tau = \oint \textbf{A} \cdot d\textbf{a}}\]
+\pagebreak
 \problem
 Header changes past first page.
-\problem
-Music notation using \texttt{musixtex}.
-In practice, I'd probably use \texttt{lilypond} and import as an image.\\
-\begin{music}
-	\parindent10mm
-	\instrumentnumber{1}
-	\setname1{Piano}
-	\setstaffs1{2}
-	\generalmeter{\meterfrac44}
-	\startextract
-		\Notes\ibu0f0\qb0{cge}\tbu0\qb0g|\hl j\en
-		\Notes\ibu0f0\qb0{cge}\tbu0\qb0g|\ql l\sk\ql n\en\bar
-		\Notes\ibu0f0\qb0{dgf}|\qlp i\en
-		\Notes\tbu0\qb0g|\ibbl1j3\qb1j\tbl1\qb1k\en
-		\Notes\ibu0f0\qb0{cge}\tbu0\qb0g|\hl j\en
-  	\zendextract
-\end{music}
-However, \texttt{musixtex} allows direct integration in a \texttt{*.tex} file, compared to something like \texttt{*.lytex}.
 \problem[10]
 Problem number skips with \texttt{{\textbackslash}problem[\#]}. \texttt{{\textbackslash}problem} without an argument defaults to counting up (as most assignments have strictly increasing question numbers), so next problem is...
 \problem

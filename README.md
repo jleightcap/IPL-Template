@@ -32,9 +32,9 @@ Italic gray text indented by a vertical line. Used if it is helpful to restate a
 Labs unfortunately mostly change format per professor. This means a 'common ancestor' template is very bare-bones, with the specific requirements added later on a class-by-class basis.
 
 ## Editing Environment
-I use vim with the `vimtex` and `vim-latex-live-preview` plugins, and `zathura` as a PDF viewer. This makes editing `*.tex` files a lost more like a WYSIWYG editor.
+I use vim with the `vimtex` and `vim-latex-live-preview` plugins, and `zathura` as a PDF viewer. This makes editing `*.tex` files a lot more like a WYSIWYG editor.
 
-`utilisnips` makes wriitng a lot of the verbose LaTeX formatting much easier.
+`utilisnips` makes writng a lot of the verbose LaTeX formatting much easier.
 
 For the occasional figure, I either use `tikz` or `Inkscape`.
 

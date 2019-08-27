@@ -1,0 +1,108 @@
+\documentclass{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{circuitikz}
+\usepackage{mdframed}
+\usepackage{titlesec}
+\usepackage{chemfig}
+\usepackage{minted}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+% -------- %
+% SECTIONS %
+% -------- %
+\newcounter{problemnumber}\setcounter{problemnumber}{1}
+\titlespacing\section{0pt}{10pt}{0pt}   % Spacing between Problems
+\titlespacing\subsection{0pt}{5pt}{0pt} % Spacing between Parts
+\newcommand{\problem}[1][-1]{
+	\setcounter{partnumber}{1}
+	\ifnum#1>0
+		\setcounter{problemnumber}{#1}
+	\fi
+	\section*{Problem \arabic{problemnumber}}
+	\stepcounter{problemnumber}
+}
+
+\newcounter{partnumber}\setcounter{partnumber}{1}
+\newcommand{\ppart}[1][-1]{
+	\ifnum#1>0
+		\setcounter{partnumber}{#1}
+	\fi
+	\subsection*{Part \parttype{partnumber}}
+	\stepcounter{partnumber}
+}
+
+\newenvironment{question}{
+	\color{gray}\itshape
+	
+	\vspace{5pt}
+	\begin{tabular}{|p{0.97\linewidth}}
+}{
+	\end{tabular}\\[5pt]
+}
+
+
+
+% ------------- %
+% HEADER/FOOTER %
+% ------------- %
+\setlength\parindent{0pt}
+\setlength\headheight{30pt}
+\headsep=0.25in
+\pagestyle{fancy}
+\lhead{\ifthenelse{\thepage=1}
+	{\textbf{Jack Leightcap} \\ \textbf{\writeday}}
+}
+\chead{\ifthenelse{\thepage=1}
+	{\textbf{\huge{HOMEWORK \hwnumber}}}
+	{\textbf{\large{HOMEWORK \hwnumber}}}
+}
+\rhead{\ifthenelse{\thepage=1}
+	{\textbf{{\course}} \\ \textbf{Professor {\prof}}}
+}
+\cfoot{\thepage}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+
+
+% ---------- %
+% PARAMETERS %
+% ---------- %
+% \PARTTYPE:
+% \Alph   := "Part A, Part B,  ..."
+% \alph   := "Part a, Part b,  ..."
+% \arabic := "Part 1, Part 2,  ..."
+% \Roman  := "Part I, Part II, ..."
+\newcommand\parttype{\Roman}
+
+% \COURSE:
+\newcommand\course{EECE 1234}
+
+% \HWNUMBER
+\newcommand\hwnumber{1}
+
+% \SEMESTER
+\newcommand\semester{Fall 2019}
+
+% \PROF
+\newcommand\prof{Schmitty}
+
+% \WRITEDAY
+% \today is date of compilation, replace if writing due date rather than write date
+\newcommand\writeday{\today}
+
+
+
+%  ------- %
+% DOCUMENT %
+% -------- %
+\begin{document}
+:)
+\end{document}

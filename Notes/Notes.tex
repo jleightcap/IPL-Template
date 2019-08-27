@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{minted}
+\usepackage{tikz}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{fancyhdr}
+
+
+% ------------- %
+% HEADER/FOOTER %
+% ------------- %
+\setlength\parindent{0pt}
+\setlength\headheight{30pt}
+\headsep=0.25in
+\pagestyle{fancy}
+\lhead{\textbf{Lecture \arabic{section}}}
+\rhead{\textbf{\course}}
+
+
+
+% ----------------- %
+% BOXED EXPRESSIONS %
+% ----------------- %
+\newenvironment{result}[1][]{
+\ifstrempty{#1}
+	{} % Don't add header
+	{\mdfsetup{
+    		frametitle={
+        		\tikz[baseline=(current bounding box.east),outer sep=0pt]
+        		\node[anchor=east,rectangle,fill=blue!30]
+        		{#1};}}
+	} % Header
+	\mdfsetup{
+    		innertopmargin=10pt,linecolor=blue!30,
+    		linewidth=2pt,topline=true,
+    		frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+	}
+	\begin{mdframed}
+}{
+	\end{mdframed}
+}
+
+\newenvironment{question}[1][]{
+\ifstrempty{#1}
+	{}
+	{\mdfsetup{
+		frametitle={
+			\tikz[baseline=(current bounding box.east),outer sep=0pt]
+			\node[anchor=east,rectangle,fill=red!30]
+			{#1};}}
+	}
+	\mdfsetup{
+		innertopmargin=10pt,linecolor=red!30,
+		linewidth=2pt,topline=true,
+		frametitleaboveskip=\dimexpr - \ht\strutbox\relax
+	}
+	\begin{mdframed}
+}{
+	\end{mdframed}
+}
+
+\newenvironment{answer}[1][]{
+\ifstrempty{#1}
+	{}
+	{\mdfsetup{
+		frametitle={
+			\tikz[baseline=(current bounding box.east),outer sep=0pt]
+			\node[anchor=east,rectangle,fill=green!30]
+			{#1};}}
+	}
+	\mdfsetup{
+		innertopmargin=10pt,linecolor=green!30,
+		linewidth=2pt,topline=true,
+		frametitleaboveskip=\dimexpr - \ht\strutbox\relax
+	}
+	\begin{mdframed}
+}{
+	\end{mdframed}
+}
+
+% -------- %
+% SECTIONS %
+% -------- %
+\newcounter{lecturenumber}\setcounter{lecturenumber}{1}
+\newcommand{\lecture}[1][-1]{
+	\ifnum#1>0
+		\setcounter{lecturenumber}{#1}
+	\fi
+	\section*{Lecture \#\arabic{lecturenumber}}
+	\setcounter{section}{\value{lecturenumber}}
+	\stepcounter{lecturenumber}
+}
+
+
+
+% ---------- %
+% PARAMETERS %
+% ---------- %
+\newcommand\course{EECE 1234}
+\newcommand\coursetitle{Electrical Engineering}
+\newcommand\prof{Schmitty}
+\newcommand\semester{Fall 2019}
+\newcommand\name{Jack Leightcap}
+
+
+
+% -------- %
+% DOCUMENT %
+% -------- %
+\begin{document}
+\begin{titlepage}
+	\centering
+	\includegraphics[width=\textwidth]{./Images/Header.jpeg}\\
+	\vspace*{\fill}
+	\textsc{\LARGE{\coursetitle}}\\[0.3cm]
+	\textsc{\Large{Professor \prof}}\\[0.3cm]
+	\textsc{\large{\course}}\\[0.3cm]
+	\textsc{\large{\semester}}\\
+	\vspace*{\fill}
+	\textsc{\name}
+\end{titlepage}
+:)
+\end{document}
