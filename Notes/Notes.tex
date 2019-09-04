@@ -13,7 +13,6 @@
 \setlength\parindent{0pt}
 \setlength\headheight{30pt}
 \headsep=0.25in
-\pagestyle{fancy}
 \lhead{\textbf{Lecture \arabic{section}}}
 \rhead{\textbf{\course}}
 
@@ -87,7 +86,7 @@
 	\ifnum#1>0
 		\setcounter{lecturenumber}{#1}
 	\fi
-	\section*{Lecture \#\arabic{lecturenumber}}
+	\section{Lecture \#\arabic{lecturenumber}}
 	\setcounter{section}{\value{lecturenumber}}
 	\stepcounter{lecturenumber}
 }
@@ -120,5 +119,11 @@
 	\vspace*{\fill}
 	\textsc{\name}
 \end{titlepage}
+\tableofcontents
+\pagebreak
+\clearpage
+\setcounter{page}{1}
+\pagestyle{fancy}
+
 :)
 \end{document}

@@ -13,6 +13,7 @@ These templates try to include most common personal use cases.
 * Chemical structures with `chemfig`
 * Code blocks with `minted`
 * Circuit diagrams with `circuitikz` (which loads `tikz`)
+
 `Minted` might cause initial compilation issues - see the [documentation](https://github.com/gpoore/minted) for the appropriate setup (`python` and 'pygments`, as well as a `-shell-escape` flag in compilation)
 
 ## Notes
