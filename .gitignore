@@ -9,5 +9,6 @@
 *.mx1
 *.pdf
 *.toc
+*.sta
 **/_minted*
 **/CheatSheet
