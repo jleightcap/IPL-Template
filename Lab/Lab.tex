@@ -1,12 +1,6 @@
 \documentclass[12pt,a4paper]{article}
-\usepackage{amsmath,amssymb}
 \usepackage[margin=0.5in]{geometry} % custom margins
 \usepackage{graphicx}
-\usepackage{hyperref}
-\usepackage{minted}
-\usepackage{caption} % custom captions
-\usepackage{float} % place figures as float
-\usepackage{circuitikz} % circuits, also loads tikz
 
 % When writing indented paragraphs:
 % \usepackage{indentfirst}
@@ -34,72 +28,7 @@
 \newpage
 	
 \section*{Introduction:}
-	Sample equations,
-	\[ \vec{\nabla} \cdot \vec{E} = \frac{\rho}{\varepsilon_0} \tag{1} \]
-	\[ \vec{\nabla} \cdot \vec{B} = 0 \tag{2} \]
-	\[ \vec{\nabla} \times \vec{E} = - \frac{\partial \vec{B}}{\partial t} \tag{3} \]
-	\[ \vec{\nabla} \times \vec{B} = \mu_0 \left( \vec{J} + \varepsilon_0 \frac{\partial \vec{E}}{\partial t} \right) \tag{4} \]
-	Within report reference as [\textit{Equation n}].
-\section*{Investigation 1:}	
-	Sample derived equation,
-	\[ z = f(x_1,x_2,...,x_n) 
-	\hspace{1cm} \Rightarrow \hspace{1cm}
-	\delta z = \sqrt{\sum_{i=1}^n \left(
-	\frac{\partial f(x_1,x_2,...,x_n)}{\partial x_i} \delta x_i \right)^2 }\]
-	Sample table,
-	\begin{figure}[H]
-		\centering
-		\begin{tabular}{ccccc}
-			\(\displaystyle \vec{F}_E = \frac{1}{4 \pi \varepsilon_0} \frac{qQ}{r^2} \hat{r} \) &
-			$\rightarrow$ & 
-			$\displaystyle \vec{E} = \frac{1}{q} \vec{F}$ & 
-			$\rightarrow$ &
-			\(\displaystyle \vec{E} = \frac{1}{4 \pi \varepsilon_0} \frac{Q}{r^2} \hat{r} \)\\
-			$\uparrow$ & & & & $\downarrow$\\
-			\(\displaystyle \vec{F}_E = - \vec{\nabla} \Delta U\) & & & &
-			\(\displaystyle \Delta V = - \int_C \vec{E} \cdot d\vec{l}\)\\
-			$\uparrow$ & & & & $\downarrow$\\
-			\(\displaystyle \Delta U = \frac{1}{4 \pi \varepsilon_0} \frac{Qq}{r} \) &
-			$\leftarrow$ & 
-			$\Delta U = q \Delta V$ & 
-			$\leftarrow$ &
-			\(\displaystyle \Delta V = \frac{1}{4 \pi \varepsilon_0} \frac{Q}{r} \)
-		\end{tabular}
-		\caption{Random Table}
-	\end{figure} \noindent
-	Sample code,
-	Sample circuit with Circuitikz,
-	\begin{figure}[H]
-		\centering
-		\begin{circuitikz}
-	    	\draw (0,0)
-	      	to[V,v=$V(t)$] (0,2) % The voltage source
-		to[short] (2,2)
-	      	to[R=$R_1$] (2,0) % The resistor
-	      	to[short] (0,0);
-	      	\draw (2,2)
-	      	to[short] (4,2)
-	      	to[L=$L_1$] (4,0)
-	      	to[short] (2,0);
-	      	\draw (4,2)
-	      	to[short] (6,2)
-	      	to[C=$C_1$] (6,0)
-	      	to[short] (4,0);
-		\end{circuitikz}
-  		\caption{Random Circuit}
-	\end{figure}				
-		
 \section*{Conclusion:}
-	I'm never really sure what goes here.
-
 \section*{Questions:}
-	\begin{enumerate}
-		\item Question 1
-	\end{enumerate}
-	
 \section*{References:}
-	\begin{enumerate}
-		\item \href{https://www.tablesgenerator.com/#}{Table Generator \LaTeX}, helpful if converting Excel Data
-		\item \href{https://web.northeastern.edu/ipl/data-analysis/straight-line-fit/}{Northeastern IPL Straight Line Fit Calculator}
-	\end{enumerate}
 \end{document}
