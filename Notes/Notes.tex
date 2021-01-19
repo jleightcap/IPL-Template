@@ -23,59 +23,59 @@
 % ----------------- %
 \newenvironment{result}[1][]{
 \ifstrempty{#1}
-	{} % Don't add header
-	{\mdfsetup{
-    		frametitle={
-        		\tikz[baseline=(current bounding box.east),outer sep=0pt]
-        		\node[anchor=east,rectangle,fill=blue!30]
-        		{#1};}}
-	} % Header
-	\mdfsetup{
-    		innertopmargin=10pt,linecolor=blue!30,
-    		linewidth=2pt,topline=true,
-    		frametitleaboveskip=\dimexpr-\ht\strutbox\relax
-	}
-	\begin{mdframed}
+    {} % Don't add header
+    {\mdfsetup{
+        frametitle={
+            \tikz[baseline=(current bounding box.east),outer sep=0pt]
+            \node[anchor=east,rectangle,fill=blue!30]
+            {#1};}}
+    } % Header
+    \mdfsetup{
+        innertopmargin=10pt,linecolor=blue!30,
+        linewidth=2pt,topline=true,
+        frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+    }
+    \begin{mdframed}
 }{
-	\end{mdframed}
+    \end{mdframed}
 }
 
 \newenvironment{question}[1][]{
 \ifstrempty{#1}
-	{}
-	{\mdfsetup{
-		frametitle={
-			\tikz[baseline=(current bounding box.east),outer sep=0pt]
-			\node[anchor=east,rectangle,fill=red!30]
-			{#1};}}
-	}
-	\mdfsetup{
-		innertopmargin=10pt,linecolor=red!30,
-		linewidth=2pt,topline=true,
-		frametitleaboveskip=\dimexpr - \ht\strutbox\relax
-	}
-	\begin{mdframed}
+    {}
+    {\mdfsetup{
+        frametitle={
+            \tikz[baseline=(current bounding box.east),outer sep=0pt]
+            \node[anchor=east,rectangle,fill=red!30]
+            {#1};}}
+    }
+    \mdfsetup{
+        innertopmargin=10pt,linecolor=red!30,
+        linewidth=2pt,topline=true,
+        frametitleaboveskip=\dimexpr - \ht\strutbox\relax
+    }
+    \begin{mdframed}
 }{
-	\end{mdframed}
+    \end{mdframed}
 }
 
 \newenvironment{answer}[1][]{
 \ifstrempty{#1}
-	{}
-	{\mdfsetup{
-		frametitle={
-			\tikz[baseline=(current bounding box.east),outer sep=0pt]
-			\node[anchor=east,rectangle,fill=green!30]
-			{#1};}}
-	}
-	\mdfsetup{
-		innertopmargin=10pt,linecolor=green!30,
-		linewidth=2pt,topline=true,
-		frametitleaboveskip=\dimexpr - \ht\strutbox\relax
-	}
-	\begin{mdframed}
+    {}
+    {\mdfsetup{
+        frametitle={
+            \tikz[baseline=(current bounding box.east),outer sep=0pt]
+            \node[anchor=east,rectangle,fill=green!30]
+            {#1};}}
+    }
+    \mdfsetup{
+        innertopmargin=10pt,linecolor=green!30,
+        linewidth=2pt,topline=true,
+        frametitleaboveskip=\dimexpr - \ht\strutbox\relax
+    }
+    \begin{mdframed}
 }{
-	\end{mdframed}
+    \end{mdframed}
 }
 
 % -------- %
@@ -83,12 +83,12 @@
 % -------- %
 \newcounter{lecturenumber}\setcounter{lecturenumber}{1}
 \newcommand{\lecture}[1][-1]{
-	\ifnum#1>0
-		\setcounter{lecturenumber}{#1}
-	\fi
-	\section{Lecture \#\arabic{lecturenumber}}
-	\setcounter{section}{\value{lecturenumber}}
-	\stepcounter{lecturenumber}
+    \ifnum#1>0
+        \setcounter{lecturenumber}{#1}
+    \fi
+    \section{Lecture \#\arabic{lecturenumber}}
+    \setcounter{section}{\value{lecturenumber}}
+    \stepcounter{lecturenumber}
 }
 
 
@@ -109,15 +109,15 @@
 % -------- %
 \begin{document}
 \begin{titlepage}
-	\centering
-	\includegraphics[width=\textwidth]{./Images/Header.jpeg}\\
-	\vspace*{\fill}
-	\textsc{\LARGE{\coursetitle}}\\[0.3cm]
-	\textsc{\Large{Professor \prof}}\\[0.3cm]
-	\textsc{\large{\course}}\\[0.3cm]
-	\textsc{\large{\semester}}\\
-	\vspace*{\fill}
-	\textsc{\name}
+    \centering
+    \includegraphics[width=\textwidth]{./Images/Header.jpeg}\\
+    \vspace*{\fill}
+    \textsc{\LARGE{\coursetitle}}\\[0.3cm]
+    \textsc{\Large{Professor \prof}}\\[0.3cm]
+    \textsc{\large{\course}}\\[0.3cm]
+    \textsc{\large{\semester}}\\
+    \vspace*{\fill}
+    \textsc{\name}
 \end{titlepage}
 \thispagestyle{empty} 
 \tableofcontents

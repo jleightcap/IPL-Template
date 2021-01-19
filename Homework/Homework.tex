@@ -12,30 +12,29 @@
 \titlespacing\section{0pt}{10pt}{0pt}   % Spacing between Problems
 \titlespacing\subsection{0pt}{5pt}{0pt} % Spacing between Parts
 \newcommand{\problem}[1][-1]{
-	\setcounter{partnumber}{1}
-	\ifnum#1>0
-		\setcounter{problemnumber}{#1}
-	\fi
-	\section*{Problem \arabic{problemnumber}}
-	\stepcounter{problemnumber}
+    \setcounter{partnumber}{1}
+    \ifnum#1>0
+        \setcounter{problemnumber}{#1}
+    \fi
+    \section*{Problem \arabic{problemnumber}}
+    \stepcounter{problemnumber}
 }
 
 \newcounter{partnumber}\setcounter{partnumber}{1}
 \newcommand{\ppart}[1][-1]{
-	\ifnum#1>0
-		\setcounter{partnumber}{#1}
-	\fi
-	\subsection*{Part \parttype{partnumber}}
-	\stepcounter{partnumber}
+    \ifnum#1>0
+        \setcounter{partnumber}{#1}
+    \fi
+    \subsection*{Part \parttype{partnumber}}
+    \stepcounter{partnumber}
 }
 
 \newenvironment{question}{
-	\color{gray}\itshape
-	
-	\vspace{5pt}
-	\begin{tabular}{|p{0.97\linewidth}}
+    \color{gray}\itshape
+    \vspace{5pt}
+    \begin{tabular}{|p{0.97\linewidth}}
 }{
-	\end{tabular}\\[5pt]
+    \end{tabular}\\[5pt]
 }
 
 
@@ -48,14 +47,14 @@
 \headsep=0.25in
 \pagestyle{fancy}
 \lhead{\ifthenelse{\thepage=1}
-	{\textbf{Jack Leightcap} \\ \textbf{\writeday}}
+    {\textbf{Jack Leightcap} \\ \textbf{\writeday}}
 }
 \chead{\ifthenelse{\thepage=1}
-	{\textbf{\huge{HOMEWORK \hwnumber}}}
-	{\textbf{\large{HOMEWORK \hwnumber}}}
+    {\textbf{\huge{HOMEWORK \hwnumber}}}
+    {\textbf{\large{HOMEWORK \hwnumber}}}
 }
 \rhead{\ifthenelse{\thepage=1}
-	{\textbf{{\course}} \\ \textbf{Professor {\prof}}}
+    {\textbf{{\course}} \\ \textbf{Professor {\prof}}}
 }
 \cfoot{\thepage}
 \renewcommand\headrulewidth{0.4pt}
