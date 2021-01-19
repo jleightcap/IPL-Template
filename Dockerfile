@@ -21,7 +21,9 @@ ENV PATH="/usr/local/texlive/2020/bin/x86_64-linux:${PATH}"
 RUN unset HISTFILE
 
 # packages
-RUN tlmgr install latexmk minted titlesec xcolor
+RUN tlmgr install latexmk minted titlesec xcolor standalone \
+    xkeyval currfile filehook filemod import tikz pgf mdframed etoolbox \
+    zref needspace gincltex svn-prov adjustbox collectbox
 RUN pip3 install pygments
 
 ENV HOME /data
