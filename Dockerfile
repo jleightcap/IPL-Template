@@ -23,7 +23,9 @@ RUN unset HISTFILE
 # packages
 RUN tlmgr install latexmk minted titlesec xcolor standalone \
     xkeyval currfile filehook filemod import tikz pgf mdframed etoolbox \
-    zref needspace gincltex svn-prov adjustbox collectbox
+    zref needspace gincltex svn-prov adjustbox collectbox enumitem \
+    graphbox nopageno koma-script beamer fvextra fancyvrb upquote lineno \
+    catchfile xstring framed float
 RUN pip3 install pygments
 
 ENV HOME /data
